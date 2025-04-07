@@ -1,86 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANSWERS</title>
 </head>
-<h1>Text Functions</h1>
-<label for="address">Address:</label>
-<input type="text" id="address" value="">
-<button onclick="lowercaseAddress()">Lowercase Address</button>
-<p id="address-result"></p>
-<br><br>
-<label for="title1">Book Title 1:</label>
-<input type="text" id="title1" value="">
-<label for="title2">Book Title 2:</label>
-<input type="text" id="title2" value="">
-<button onclick="checkDuplicateTitles()">Check Duplicate Titles</button>
-<p id="title-result"></p>
-<br><br>
-<label for="essay">Essay:</label>
-<textarea id="essay"></textarea>
-<button onclick="removeExtraSpaces()">Remove Extra Spaces</button>
-<p id="essay-result"></p>
+<body>
+<h1>Test Functions</h1>
+<h2>Lowercase Address Labels</h2>
+<label for="addressInput">Address:</label>
+<input type="text" id="addressInput" onchange="lowercaseAddress()">
+<p id="addressResult"></p>
+<h2>Detect Duplicate Book Titles</h2>
+<label for="title1Input">Book Title 1:</label>
+<input type="text" id="title1Input" onchange="checkDuplicateTitles()">
+<label for="title2Input">Book Title 2:</label>
+<input type="text" id="title2Input" onchange="checkDuplicateTitles()">
+<p id="titleResult"></p>
+<h2>Remove Extra Spaces in Essays</h2>
+<label for="essayInput">Essay:</label>
+<textarea id="essayInput" onchange="removeExtraSpaces()"></textarea>
+<p id="essayResult"></p>
+<h2>Validate Strong Password</h2>
+<label for="passwordInput">Password:</label>
+<input type="text" id="passwordInput" onchange="validatePassword()">
+<p id="passwordResult"></p>
 <script>
+function lowercaseAddress() {
+      const addressInput = document.getElementById('addressInput');
+      const address = addressInput.value;
+      const lowercaseAddress = address.toLowerCase();
+      addressInput.value = lowercaseAddress;
+      document.getElementById('addressResult').innerHTML = `Lowercase Address: ${lowercaseAddress}`;
+    }
 
-        const address = "";
-        console.log(address.toLowerCase()); 
+    function checkDuplicateTitles() {
+      const title1Input = document.getElementById('title1Input');
+      const title2Input = document.getElementById('title2Input');
+      const title1 = title1Input.value.toLowerCase();
+      const title2 = title2Input.value.toLowerCase();
+      const isDuplicate = (title1 === title2);
+      document.getElementById('titleResult').innerHTML = `Duplicate: ${isDuplicate}`;
+    }
 
-        const titles = ["The Great Developer Mr Femi", "the great developer mr femi"];
-        const lowercaseTitles = titles.map(title => title.toLowerCase());
-        const duplicates = [];
-        for (let i = 0; i < lowercaseTitles.length; i++) {
-            for (let j = i + 1; j < lowercaseTitles.length; j++) {
-                if (lowercaseTitles[i] === lowercaseTitles[j]) {
-                    duplicates.push(titles[i]);
-                }
-            }
-        }
-        console.log(duplicates); 
+    function removeExtraSpaces() {
+      const essayInput = document.getElementById('essayInput');
+      const essay = essayInput.value;
+      const result = essay.replace(/\s+/g, ' ');
+      essayInput.value = result;
+      document.getElementById('essayResult').innerHTML = `Essay with single spaces: ${result}`;
+    }
 
-       // const essay = "This    is   a   test    essay.";
-        //console.log(essay.replace(/\s+/g, ' ')); 
-
-       // const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
-       // const password = "Password123";
-        //console.log(regex.test(password)); 
-
-        const numberOfItems = 6;
-        if (numberOfItems % 2 == 0) {
-            console.log('Discount Applied');
-        } else {
-            console.log('No Discount');
-        }
-
-        const temperature = 25;
-        if (temperature < 19) {
-            console.log('Cold');
-        } else if (temperature >= 20 & temperature <= 28) {
-            console.log('Warm');
-        } else {
-            console.log('Hot');
-        }
-
-        const answer = "ogbomoso";
-        const correctAnswer = "Ogbomoso";
-        console.log(answer.toLowerCase() == correctAnswer.toLowerCase());
-        
-const luggageWeight = 25;
-if (luggageWeight < 20) {
-    console.log('Underweight');
-} else if (luggageWeight >= 20 & luggageWeight <= 30) {
-    console.log('Allowed');
-} else {
-    console.log('Overweight');
-}
- 
-    </script>
+    function validatePassword() {
+      const passwordInput = document.getElementById('passwordInput');
+      const password = passwordInput.value;
+      const hasUppercase = /[A-Z]/.test(password);
+      const hasLowercase = /[a-z]/.test(password);
+      const hasNumber = /\d/.test(password);
+      const isStrong = (password.length >= 8 && hasUppercase && hasLowercase && hasNumber);
+      document.getElementById('passwordResult').innerHTML = `Strong Password: ${isStrong}`;
+    }
+  </script>
 </body>
 </html>
-
-   
-    
-        </script>
-    </body>
-    </html>
