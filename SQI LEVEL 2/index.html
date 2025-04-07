@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div id="output"></div>
+</body>
+<script>
+
+        const address = "YOACO";
+        console.log(address.toLowerCase()); 
+
+        const titles = ["The Great Developer Mr Femi", "the great developer mr femi"];
+        const lowercaseTitles = titles.map(title => title.toLowerCase());
+        const duplicates = [];
+        for (let i = 0; i < lowercaseTitles.length; i++) {
+            for (let j = i + 1; j < lowercaseTitles.length; j++) {
+                if (lowercaseTitles[i] === lowercaseTitles[j]) {
+                    duplicates.push(titles[i]);
+                }
+            }
+        }
+        console.log(duplicates); 
+
+       // const essay = "This    is   a   test    essay.";
+        //console.log(essay.replace(/\s+/g, ' ')); 
+
+       // const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+       // const password = "Password123";
+        //console.log(regex.test(password)); 
+
+        const numberOfItems = 6;
+        if (numberOfItems % 2 == 0) {
+            console.log('Discount Applied');
+        } else {
+            console.log('No Discount');
+        }
+
+        const temperature = 25;
+        if (temperature < 19) {
+            console.log('Cold');
+        } else if (temperature >= 20 & temperature <= 28) {
+            console.log('Warm');
+        } else {
+            console.log('Hot');
+        }
+
+        const answer = "ogbomoso";
+        const correctAnswer = "Ogbomoso";
+        console.log(answer.toLowerCase() == correctAnswer.toLowerCase());
+        
+const luggageWeight = 25;
+if (luggageWeight < 20) {
+    console.log('Underweight');
+} else if (luggageWeight >= 20 & luggageWeight <= 30) {
+    console.log('Allowed');
+} else {
+    console.log('Overweight');
+}
+ 
+    </script>
+</body>
+</html>
+
+   
+    
+        </script>
+    </body>
+    </html>
