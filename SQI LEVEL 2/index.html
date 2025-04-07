@@ -4,14 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="script.js"></script>
 </head>
-<body>
-    <div id="output"></div>
-</body>
+<h1>Text Functions</h1>
+<label for="address">Address:</label>
+<input type="text" id="address" value="">
+<button onclick="lowercaseAddress()">Lowercase Address</button>
+<p id="address-result"></p>
+<br><br>
+<label for="title1">Book Title 1:</label>
+<input type="text" id="title1" value="">
+<label for="title2">Book Title 2:</label>
+<input type="text" id="title2" value="">
+<button onclick="checkDuplicateTitles()">Check Duplicate Titles</button>
+<p id="title-result"></p>
+<br><br>
+<label for="essay">Essay:</label>
+<textarea id="essay"></textarea>
+<button onclick="removeExtraSpaces()">Remove Extra Spaces</button>
+<p id="essay-result"></p>
 <script>
 
-        const address = "YOACO";
+        const address = "";
         console.log(address.toLowerCase()); 
 
         const titles = ["The Great Developer Mr Femi", "the great developer mr femi"];
